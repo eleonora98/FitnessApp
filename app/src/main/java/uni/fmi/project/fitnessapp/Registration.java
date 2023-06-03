@@ -33,22 +33,17 @@ public class Registration extends AppCompatActivity {
         db = helper.getWritableDatabase();
         initViews();
     }
-
-
     private void initViews() {
         usernameEt = findViewById(R.id.username_et);
         emailEt = findViewById(R.id.email_et);
         passwordEt = findViewById(R.id.password_et);
-
         registerBtn = findViewById(R.id.register_btn);
-
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 insertUser();
             }
         });
-
     }
 
     private void insertUser() {
@@ -101,7 +96,7 @@ public class Registration extends AppCompatActivity {
         db.close();
     }
 
-    public String getEmail() throws SQLException {
+    private String getEmail() throws SQLException {
         String email = "";
         Cursor cursor = helper.getReadableDatabase().query(
                 "USERS", new String[] { "email" },
@@ -116,7 +111,7 @@ public class Registration extends AppCompatActivity {
         return email;
     }
 
-    public String getUsername() throws SQLException {
+    private String getUsername() throws SQLException {
         String username = "";
         Cursor cursor = helper.getReadableDatabase().query(
                 "USERS", new String[] { "username" },

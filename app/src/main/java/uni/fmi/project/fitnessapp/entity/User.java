@@ -5,8 +5,6 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-import java.io.Serializable;
-
 public class User implements Parcelable {
 
     private Integer id;
@@ -76,7 +74,7 @@ public class User implements Parcelable {
     public void writeToParcel(@NonNull Parcel parcel, int i) {
         parcel.writeInt(id);
         parcel.writeString(username);
-        parcel.writeString(email);
         parcel.writeString(password);
+        parcel.writeString(email);
     }
 }
