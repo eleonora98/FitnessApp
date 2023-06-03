@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FitnessApp</string>
+    <string name="title_home">Тренировки</string>
+    <string name="title_dashboard">Настроения</string>
+    <string name="title_notifications">Профил</string>
+    <string name="save_old">Запази старите данни</string>
+    <string name="save_locally">Запази новите данни</string>
+    <string name="save_separately">Запази и старите и новите</string>
+    <string name="add_training">Добави тренирока</string>
+    <string name="edit_training">Редактирай тренировка</string>
+    <string name="login">Вход</string>
+    <string name="register">Регистрация</string>
+</resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_inverse"
+    tools:context=".ui.single_traning.SingleTrainingFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/workout_1"
+        android:layout_margin="24dp"
+        android:layout_width="0dp"
+        android:layout_height="164dp"/>
+
+    <TextView
+        android:id="@+id/nameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="18sp"
+        android:textColor="@color/grey"
+        android:textStyle="bold"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/durationTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration"
+        android:textSize="18sp"
+        android:textColor="@color/grey"
+        android:layout_marginStart="24dp"
+        app:layout_constraintTop_toBottomOf="@id/nameTv"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/statusTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Status"
+        android:textSize="18sp"
+        android:textColor="@color/grey"
+        app:layout_constraintTop_toBottomOf="@id/durationTv"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/descrTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Description"
+        android:textSize="18sp"
+        android:textColor="@color/grey"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statusTv"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/get_info_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get info"
+        android:padding="12dp"
+        android:background="@drawable/button_wrapper_pink"
+        android:textAllCaps="false"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/descrTv"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textColor="@color/pink"
+        android:textAllCaps="false"
+        android:background="@drawable/button_wrapper_pink"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/get_info_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/check_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:padding="12dp"
+        android:layout_marginEnd="64dp"
+        android:text="Check for changes"
+        android:background="@drawable/button_wrapper_pink"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="@id/get_info_btn"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/remote_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_btn"/>
+
+    <TextView
+        android:id="@+id/remote_duration_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/remote_name_tv"/>
+
+    <TextView
+        android:id="@+id/remote_status_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/remote_duration_tv"/>
+
+    <TextView
+        android:id="@+id/remote_descr_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textSize="18sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/remote_status_tv"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_rounded"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dialog.ChoiceDialogFragment">
+
+    <TextView
+        android:id="@+id/header_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="48dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="There are differeneces"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+    <TextView
+        android:id="@+id/message_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="How would you like to proceed?"
+        app:layout_constraintTop_toBottomOf="@id/header_tv"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/pink"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/message_tv"
+        android:padding="16dp"
+        android:text="Cancel"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_both_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginStart="24dp"
+        android:padding="16dp"
+        android:textColor="@color/pink"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cancel_btn"
+        android:text="Save both local and remote"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/update_with_remote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginStart="24dp"
+        android:textColor="@color/pink"
+        android:padding="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/save_both_btn"
+        android:text="Replace with remote data"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

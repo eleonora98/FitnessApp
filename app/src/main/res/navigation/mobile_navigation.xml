@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_trainings">
+
+    <fragment
+        android:id="@+id/navigation_moods"
+        android:name="uni.fmi.project.fitnessapp.ui.mood.MoodFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_mood" />
+
+    <fragment
+        android:id="@+id/navigation_trainings"
+        android:name="uni.fmi.project.fitnessapp.ui.trainings.TrainingsFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_trainings" >
+        <argument
+            android:name="trainingId"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <action
+            android:id="@+id/action_navigation_trainings_to_singleTrainingFragment"
+            app:destination="@id/singleTrainingFragment"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="true"
+            app:popUpTo="@layout/fragment_trainings">
+        </action>
+        <action
+            android:id="@+id/action_navigation_trainings_to_addEditTrainingFragment"
+            app:destination="@id/addEditTrainingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="uni.fmi.project.fitnessapp.ui.profile.ProfileFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/singleTrainingFragment"
+        android:name="uni.fmi.project.fitnessapp.ui.single_traning.SingleTrainingFragment"
+        android:label="fragment_single_training"
+        tools:layout="@layout/fragment_single_training" >
+        <argument
+            android:name="trainingId"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <action
+            android:id="@+id/action_singleTrainingFragment_to_addEditTrainingFragment"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="true"
+            app:popUpTo="@layout/fragment_trainings"
+            app:destination="@id/addEditTrainingFragment" />
+        <action
+            android:id="@+id/action_singleTrainingFragment_to_navigation_trainings"
+            app:destination="@id/navigation_trainings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditTrainingFragment"
+        android:name="uni.fmi.project.fitnessapp.ui.add_edit_training.AddEditTrainingFragment"
+        android:label="fragment_add_edit_training"
+        tools:layout="@layout/fragment_add_edit_training" >
+        <action
+            android:id="@+id/action_addEditTrainingFragment_to_singleTrainingFragment"
+            app:destination="@id/singleTrainingFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/choiceDialogFragment"
+        android:name="uni.fmi.project.fitnessapp.ui.dialog.ChoiceDialogFragment"
+        android:label="fragment_choice_dialog"
+        tools:layout="@layout/fragment_choice_dialog" />
+</navigation>
