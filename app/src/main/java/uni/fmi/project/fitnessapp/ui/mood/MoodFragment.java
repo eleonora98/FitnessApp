@@ -28,6 +28,7 @@ import uni.fmi.project.fitnessapp.adapter.MoodAdapter;
 import uni.fmi.project.fitnessapp.db.DbConstants;
 import uni.fmi.project.fitnessapp.db.SqLiteHelper;
 import uni.fmi.project.fitnessapp.entity.Mood;
+import uni.fmi.project.fitnessapp.entity.User;
 import uni.fmi.project.fitnessapp.ui.add_mood.AddMoodFragment;
 
 public class MoodFragment extends Fragment implements MoodAdapter.OnClickListener {
@@ -41,6 +42,7 @@ public class MoodFragment extends Fragment implements MoodAdapter.OnClickListene
     SQLiteDatabase db;
 
     private Mood mood;
+    private User user;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -50,6 +52,7 @@ public class MoodFragment extends Fragment implements MoodAdapter.OnClickListene
         db = dbHelper.getWritableDatabase();
         mDataset = new ArrayList<>();
         mRecyclerView = view.findViewById(R.id.recyclerView);
+        user = (User) getActivity().getIntent().getParcelableExtra("user");
 
         new Thread( new Runnable() { @Override public void run() {
             mDataset = getDbMoodsInfo();
@@ -81,18 +84,22 @@ public class MoodFragment extends Fragment implements MoodAdapter.OnClickListene
 
     @SuppressLint("Range")
     private List<Mood> getDbMoodsInfo() {
-        Cursor cursor = db.rawQuery("Select * from moods order by id desc", null);
+        Cursor cursor = db.rawQuery("Select * from moods where user_id=? order by id desc",
+                new String[]{String.valueOf(user.getId())});
         if(cursor.getCount() >= 1) {
             while (cursor.moveToNext()) {
                 mood = new Mood();
                 Integer id = cursor.getInt(cursor.getColumnIndex("id"));
                 Integer moodId = cursor.getInt(cursor.getColumnIndex("mood_id"));
+                Integer userId = cursor.getInt(cursor.getColumnIndex("user_id"));
                 String date = cursor.getString(cursor.getColumnIndex("date_created"));
-                mood.setId(id);
-                mood.setMoodId(moodId);
-                mood.setDate(date);
-                mDataset.add(mood);
-                Log.d("MoodFr", "mood" +  mood);
+                if (userId == user.getId()) {
+                    mood.setId(id);
+                    mood.setMoodId(moodId);
+                    mood.setDate(date);
+                    mDataset.add(mood);
+                    Log.d("MoodFr", "mood" +  mood);
+                }
             }
         }
         cursor.close();

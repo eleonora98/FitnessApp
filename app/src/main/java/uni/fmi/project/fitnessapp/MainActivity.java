@@ -1,5 +1,6 @@
 package uni.fmi.project.fitnessapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -62,15 +63,17 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         intent.putExtra("user", helper.getCurrentUser(userId));
         startActivityForResult(intent, 200);
     }
-    public int getLoginData(String username, String password)
-    {
+    public int getLoginData(String username, String password) {
         SQLiteDatabase sql = helper.getReadableDatabase();
-        String query=" select count(*) from "+"USERS"+" where username ='"+username+"' and password='"+password+"'";
+        String query=" select * from "+"USERS"+" where username ='"+username+"' and password='"+password+"'";
         Cursor cursor =sql.rawQuery(query,null);
-
-        cursor.moveToFirst();
-        int count = cursor.getInt(0);
-        return count;
+        if(cursor.getCount() >= 1) {
+            while (cursor.moveToNext()) {
+                @SuppressLint("Range") Integer userId = cursor.getInt(cursor.getColumnIndex("id"));
+                return userId;
+            }
+        }
+        return 0;
     }
     private void login() {
         String username = usernameEt.getText().toString();
@@ -95,7 +98,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void onClick(View view) {
         if (view.getId() == R.id.btn_signIn) {
             login();
-        } else  if (view.getId() == R.id.btn_signIn) {
+        } else  if (view.getId() == R.id.btn_signUp) {
             Intent intent = new Intent(MainActivity.this, Registration.class);
             startActivityForResult(intent, 200);
 
