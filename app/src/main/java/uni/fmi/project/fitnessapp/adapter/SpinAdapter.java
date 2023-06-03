@@ -1,7 +1,6 @@
 package uni.fmi.project.fitnessapp.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +56,6 @@ public class SpinAdapter<T> extends ArrayAdapter<SpinnerModel> {
         });
         return convertView;
     }
-
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         convertView = layoutInflater.inflate(R.layout.custom_spinner, null);

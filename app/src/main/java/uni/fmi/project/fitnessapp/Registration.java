@@ -1,23 +1,18 @@
 package uni.fmi.project.fitnessapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import uni.fmi.project.fitnessapp.db.DbConstants;
+import androidx.appcompat.app.AppCompatActivity;
+
 import uni.fmi.project.fitnessapp.db.SqLiteHelper;
 import uni.fmi.project.fitnessapp.entity.User;
 

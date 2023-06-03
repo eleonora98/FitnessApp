@@ -1,4 +1,5 @@
 package uni.fmi.project.fitnessapp.adapter;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -15,7 +15,6 @@ import java.util.List;
 
 import uni.fmi.project.fitnessapp.R;
 import uni.fmi.project.fitnessapp.entity.Mood;
-import uni.fmi.project.fitnessapp.entity.Training;
 import uni.fmi.project.fitnessapp.enums.MoodEnum;
 
 public class MoodAdapter extends RecyclerView.Adapter<MoodAdapter.ViewHolder> {

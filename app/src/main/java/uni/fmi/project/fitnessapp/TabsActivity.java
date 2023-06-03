@@ -1,35 +1,21 @@
 package uni.fmi.project.fitnessapp;
 
-import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
-import androidx.navigation.NavArgument;
 import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import java.util.List;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import uni.fmi.project.fitnessapp.config.ApiRestProvider;
 import uni.fmi.project.fitnessapp.databinding.ActivityTabsBinding;
-import uni.fmi.project.fitnessapp.db.DbConstants;
 import uni.fmi.project.fitnessapp.db.SqLiteHelper;
-import uni.fmi.project.fitnessapp.entity.Training;
 import uni.fmi.project.fitnessapp.entity.User;
-import uni.fmi.project.fitnessapp.service.TrainingsService;
 
 public class TabsActivity extends FragmentActivity {
 

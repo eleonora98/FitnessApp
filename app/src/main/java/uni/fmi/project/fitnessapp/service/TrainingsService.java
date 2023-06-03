@@ -1,8 +1,5 @@
 package uni.fmi.project.fitnessapp.service;
 
-import java.util.List;
-
-import kotlin.ParameterName;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;

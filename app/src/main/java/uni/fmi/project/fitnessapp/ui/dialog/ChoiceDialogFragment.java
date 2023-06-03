@@ -47,10 +47,7 @@ public class ChoiceDialogFragment extends DialogFragment implements View.OnClick
         cancelBtn.setOnClickListener(this);
         saveBothBtn.setOnClickListener(this);
         replaceBtn.setOnClickListener(this);
-
-
     }
-
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.cancel_btn) {

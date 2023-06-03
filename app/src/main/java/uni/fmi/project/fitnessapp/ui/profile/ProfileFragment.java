@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
-import java.io.Serializable;
 
 import uni.fmi.project.fitnessapp.R;
 import uni.fmi.project.fitnessapp.databinding.FragmentProfileBinding;
